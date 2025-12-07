@@ -5,3 +5,4 @@ requests==2.32.5
 allure-pytest==2.15.2
 playwright==1.56.0
 curlify==3.0.0
+python-dotenv==1.2.1
