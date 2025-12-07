@@ -6,9 +6,9 @@ from src.utils.base_session import BaseSession
 
 @dataclass
 class UserReqres:
-    name: str
-    job: str
-    updated_job: list
+    first_name: str
+    last_name: str
+    avatar: str
     email: str
 
 
@@ -35,8 +35,8 @@ class ReqresWithEnv:
 
 
 user_reqres = UserReqres(
-    name='maks',
-    job='qa',
-    updated_job=['qa', 'sdet'],
+    first_name='Maks',
+    last_name='Kudaev',
+    avatar='https://reqres.in/img/faces/2-image.jpg',
     email='maxim.cudaew@gmail.com'
 )

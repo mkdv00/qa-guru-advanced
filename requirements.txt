@@ -7,3 +7,5 @@ playwright==1.56.0
 curlify==3.0.0
 python-dotenv==1.2.1
 voluptuous==0.15.2
+pytest-voluptuous==1.2.0
+uvicorn==0.38.0

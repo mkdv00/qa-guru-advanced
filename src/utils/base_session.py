@@ -43,7 +43,8 @@ def allure_logger(func) -> Callable:
 def log_request(func) -> Callable:
     def wrapper(*args, **kwargs) -> Response:
         response: Response = func(*args, **kwargs)
-        logging.info(f'- code: {response.status_code} - {to_curl(response.request)}')
+        logging.info(f'Request - code: {response.status_code} - {to_curl(response.request)}')
+        logging.info(f'Response - {response.json()}')
         return response
 
     return wrapper

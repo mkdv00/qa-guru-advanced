@@ -3,6 +3,7 @@ from pydantic import BaseModel
 
 app = FastAPI()
 
+
 class UserData(BaseModel):
     id: int
     email: str
@@ -10,13 +11,16 @@ class UserData(BaseModel):
     last_name: str
     avatar: str
 
+
 class SupportData(BaseModel):
     url: str
     text: str
 
+
 class ResponseModel(BaseModel):
     data: UserData
     support: SupportData
+
 
 @app.get("/api/users/{user_id}", response_model=ResponseModel)
 def get_user(user_id: int):
@@ -24,9 +28,9 @@ def get_user(user_id: int):
     users = {
         2: {
             "id": 2,
-            "email": "janet.weaver@reqres.in",
-            "first_name": "Janet",
-            "last_name": "Weaver",
+            "email": "maxim.cudaew@gmail.com",
+            "first_name": "Maks",
+            "last_name": "Kudaev",
             "avatar": "https://reqres.in/img/faces/2-image.jpg",
         }
     }
@@ -46,9 +50,9 @@ def get_user(user_id: int):
         "support": support_info,
     }
 
+
 # To run this app, use the following command in your terminal:
 # uvicorn filename:app --reload
-
 if __name__ == "__main__":
     import uvicorn
     uvicorn.run(app, host="0.0.0.0", port=8000)
